@@ -1,3 +1,37 @@
+@font-face {
+  font-family: 'ProximaNovaBold';
+  src: url(fonts/ProximaNova-Bold.ttf);
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: 'ProximaNovaExtrabld';
+  src: url(fonts/ProximaNova-Extrabld.ttf);
+  font-size: 24px;
+}
+
+@font-face {
+  font-family: 'ProximaNovaRegular';
+  src: url(fonts/ProximaNova-Regular.ttf);
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: 'ProximaNovaSemibold';
+  src: url(fonts/ProximaNova-Semibold.ttf);
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: 'Intro';
+  src: url(fonts/Intro.otf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 ul, a, li {
   text-decoration: none;
   list-style: none;
@@ -7,6 +41,15 @@ ul, a, li {
 .container {
   margin: 0 auto;
   width: 80%;
+}
+
+header {
+  position: relative;
+  z-index: 5;
+}
+
+header .karpachoff_logo {
+  padding: 0px 0;
 }
 
 header .container {
@@ -21,14 +64,509 @@ header .container {
           align-items: center;
 }
 
+header .container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 header .container ul a {
   padding: 20px 0 20px 0;
   margin: 0 20px 0 20px;
+  font-family: 'ProximaNovaBold';
+  border-bottom: 3px solid #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-transition: all .1s;
   transition: all .1s;
 }
 
 header .container ul a:hover {
   border-bottom: 3px solid #FC890D;
+}
+
+header .container ul a:nth-child(4) {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .container ul a:nth-child(4) img {
+  padding-right: 10px;
+}
+
+.title_screen {
+  min-height: 60vh;
+  width: 100%;
+  background-color: #296DCE;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.title_screen::before {
+  position: absolute;
+  z-index: 2;
+  content: ' ';
+  width: 120%;
+  height: 50vh;
+  background-color: #fff;
+  opacity: 0.07;
+  -webkit-transform: translate(-10%, -40vh) rotate(10deg);
+          transform: translate(-10%, -40vh) rotate(10deg);
+}
+
+.title_screen::after {
+  position: absolute;
+  z-index: 2;
+  content: ' ';
+  width: 100%;
+  height: 50vh;
+  background-color: #fff;
+  opacity: 0.07;
+  -webkit-transform: translate(-40%, 0vh) rotate(-20deg);
+          transform: translate(-40%, 0vh) rotate(-20deg);
+}
+
+.title_screen .container {
+  position: relative;
+  margin-top: 100px;
+  z-index: 5;
+}
+
+.title_screen .container::before {
+  position: absolute;
+  z-index: 1;
+  content: '';
+  background-image: url(../img/karpachoff.png);
+  width: 339px;
+  height: 479px;
+  right: 0;
+}
+
+.title_screen .container h1 {
+  width: 70%;
+  text-transform: uppercase;
+  font-family: 'Intro';
+  font-weight: normal;
+  font-size: 2.5em;
+  color: #fff;
+}
+
+.title_screen .container h1 span {
+  font-size: 0.65em;
+  color: #FC890D;
+}
+
+.title_screen .container button {
+  font-family: 'ProximaNovaBold';
+  color: #fff;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  margin: 60px 0;
+  padding: 15px 30px;
+  border: 3px solid #fff;
+  border-radius: 4px;
+  opacity: 0.8;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.title_screen .container button:hover {
+  opacity: 1;
+}
+
+.title_screen .container .progress_bar_empty {
+  position: relative;
+  height: 12px;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.title_screen .container .progress_bar_empty .progress_bar_filled {
+  position: relative;
+  height: 8px;
+  width: 60%;
+  background-color: #296DCE;
+  border-radius: 3px;
+  margin: 0 2px;
+}
+
+.title_screen .container .progress_text {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-family: 'ProximaNovaBold';
+}
+
+.title_screen .container .progress_text div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+}
+
+.title_screen .container .progress_text div p {
+  font-size: 2.5em;
+  font-family: 'ProximaNovabold';
+}
+
+.title_screen .container .progress_text div span {
+  margin-left: 10px;
+  width: 5px;
+  font-family: 'ProximaNovaSemibold';
+  font-size: 0.9em;
+}
+
+.under_main_screen .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.under_main_screen .container a {
+  font-family: 'ProximaNovaBold';
+  color: #979FAD;
+  padding: 15px 20px;
+}
+
+.under_main_screen .container a:nth-of-type(3) {
+  color: #323232;
+}
+
+.under_main_screen .container .short_line {
+  height: 2px;
+  width: 22px;
+  background-color: #979FAD;
+}
+
+.coures_themes {
+  background-color: #FAFAFA;
+}
+
+.coures_themes .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.coures_themes .container .coures_themes_left_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.coures_themes .container .coures_themes_left_block .short_line {
+  height: 3px;
+  width: 22px;
+  background-color: #222B3A;
+}
+
+.coures_themes .container .coures_themes_left_block a {
+  font-family: 'ProximaNovaBold';
+  color: #222B3A;
+  font-size: 18px;
+  padding: 10px 15px;
+}
+
+.coures_themes .container .coures_themes_right_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 250px;
+  font-family: 'ProximaNovaBold';
+  color: #FC890D;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  margin: 20px 0;
+  padding: 15px 15px;
+  border: 2px solid #FC890D;
+  border-radius: 4px;
+  opacity: 0.8;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.coures_themes .container .coures_themes_right_block img {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.coures_themes .container .coures_themes_right_block:hover {
+  opacity: 1;
+}
+
+.coures_themes .container .coures_themes_right_block:hover img {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.themes_names {
+  padding-bottom: 80px;
+}
+
+.themes_names .container {
+  position: relative;
+}
+
+.themes_names .container .card {
+  width: 100%;
+  min-height: 150px;
+  margin: 20px 0;
+  border: 1px solid #F3F3F3;
+  border-radius: 3px;
+  -webkit-box-shadow: 3px 5px 22px 0px rgba(0, 0, 0, 0.05);
+          box-shadow: 3px 5px 22px 0px rgba(0, 0, 0, 0.05);
+  margin: 30px auto;
+  padding: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.themes_names .container .card .number_of_theme {
+  font-size: 64px;
+  font-family: 'ProximaNovaBold';
+  color: #E1E1E1;
+  line-height: 0.9;
+  padding: 0 40px;
+}
+
+.themes_names .container .card .card_text {
+  position: relative;
+}
+
+.themes_names .container .card .card_text h2 {
+  font-family: 'ProximaNovaExtrabld';
+  color: #1092CB;
+}
+
+.themes_names .container .card .card_text div {
+  margin: 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.themes_names .container .card .card_text div img {
+  margin-right: 5px;
+}
+
+.themes_names .container .card .card_text div p {
+  color: #979FAD;
+  font-family: 'ProximaNovaBold';
+}
+
+.themes_names .container .card .card_text .card_description {
+  color: #696969;
+  font-family: 'ProximaNovaRegular';
+  width: 80%;
+}
+
+.themes_names .container .card .card_text .card_info {
+  margin-top: 30px;
+  font-family: 'ProximaNovaBold';
+  color: #696969;
+}
+
+.themes_names .container .card .card_text .card_info a {
+  color: #FC890D;
+  border-bottom: 1px solid #FC890D;
+  opacity: 0.8;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.themes_names .container .card .card_text .card_info a:hover {
+  opacity: 1;
+}
+
+.themes_names .container .card .progress_bar_with_text {
+  padding: 0 40px 0 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.themes_names .container .card .progress_bar_with_text p {
+  color: #323232;
+  font-family: 'ProximaNovaBold';
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.themes_names .container .card .progress_bar_with_text .progress_bar_empty {
+  position: relative;
+  height: 120px;
+  width: 12px;
+  background-color: #F3F3F3;
+  border: 1px solid #E6E6E6;
+  border-radius: 3px;
+  padding: 2px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.themes_names .container .card .progress_bar_with_text .progress_bar_empty .progress_bar_filled {
+  position: relative;
+  height: 60%;
+  width: 8px;
+  background-color: #1092CB;
+  border-radius: 3px;
+}
+
+footer {
+  padding: 40px 0;
+  background-color: #1092CB;
+  color: #fff;
+  position: relative;
+}
+
+footer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+footer .container .footer_card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+footer .container .footer_card .title_text {
+  font-size: 24px;
+  font-family: 'ProximaNovaBold';
+}
+
+footer .container .footer_card .short_line {
+  height: 3px;
+  width: 30px;
+  background-color: #fff;
+  border-radius: 1px;
+  margin: 5px 0 20px 0;
+}
+
+footer .container .footer_card p {
+  font-family: 'ProximaNovaSemibold';
+  margin-bottom: 10px;
+}
+
+footer .container .footer_card a {
+  color: #fff;
+  font-family: 'ProximaNovaSemibold';
+  padding: 5px 10px 5px 0px;
+}
+
+footer .container .footer_card .phone {
+  font-family: 'ProximaNovaSemibold';
+  margin-bottom: 0;
+  padding: 5px 10px 5px 0px;
+}
+
+.footer_line {
+  background-color: #222B3A;
+  height: 50px;
+  bottom: 0;
 }
 /*# sourceMappingURL=course.css.map */
