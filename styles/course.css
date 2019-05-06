@@ -379,6 +379,10 @@ header .container ul a:nth-child(4) img {
           box-shadow: 3px 5px 22px 0px rgba(0, 0, 0, 0.05);
   margin: 30px auto;
   padding: 30px 0;
+}
+
+.themes_names .container .card .container {
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -407,6 +411,7 @@ header .container ul a:nth-child(4) img {
 }
 
 .themes_names .container .card .container .number_of_theme_block .number_of_theme {
+  margin-right: 40px;
   font-size: 64px;
   font-family: 'ProximaNovaBold';
   color: #E1E1E1;
@@ -473,7 +478,6 @@ header .container ul a:nth-child(4) img {
 }
 
 .themes_names .container .card .container .progress_bar_with_text {
-  padding: 0 40px 0 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -648,6 +652,12 @@ footer .container .footer_card .phone {
             flex-direction: column;
     margin: 30px auto;
     padding: 10px 0;
+  }
+  .themes_names .container .card .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .themes_names .container .card .container .number_of_theme_block .number_of_theme {
     font-size: 40px;
@@ -856,6 +866,44 @@ footer .container .footer_card .phone {
   }
   .title_screen .container::before {
     display: none;
+  }
+  footer .container {
+    position: relative;
+  }
+  footer .container .footer_card {
+    position: relative;
+  }
+  footer .container .footer_card:nth-child(1) {
+    display: none;
+  }
+  footer .container .footer_card:nth-child(2) {
+    display: none;
+  }
+  footer .container .footer_card:nth-child(3) {
+    display: none;
+  }
+  footer .container .footer_card:nth-child(4) {
+    position: relative;
+  }
+  footer .container .footer_card:nth-child(4) a:nth-of-type(1)::before {
+    position: relative;
+    margin-right: 15px;
+    content: url(../img/phone.svg);
+  }
+  footer .container .footer_card:nth-child(4) a:nth-of-type(2)::before {
+    position: relative;
+    margin-right: 15px;
+    content: url(../img/phone.svg);
+  }
+  footer .container .footer_card:nth-child(4) p:nth-of-type(2)::before {
+    position: relative;
+    margin-right: 15px;
+    content: url(../img/phone.svg);
+  }
+  footer .container .footer_card:nth-child(4) p:nth-of-type(3)::before {
+    position: relative;
+    margin-right: 15px;
+    content: url(../img/phone.svg);
   }
 }
 /*# sourceMappingURL=course.css.map */
