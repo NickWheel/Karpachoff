@@ -172,7 +172,7 @@ header {
 
             .progress_bar_filled {
                 position: relative;
-                height: 7px;
+                height: 8px;
                 width: 60%;
                 background-color: #296DCE;
                 border-radius: 2px;
@@ -465,7 +465,7 @@ footer {
     }
 }
 .footer_line {
-    background-color: #222B3A;
+    background-color: $dark;
     height: 50px;
     bottom: 0;
 }

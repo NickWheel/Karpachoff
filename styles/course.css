@@ -206,7 +206,7 @@ header .container ul a:nth-child(4) img {
 
 .title_screen .container .progress_bar_empty .progress_bar_filled {
   position: relative;
-  height: 7px;
+  height: 8px;
   width: 60%;
   background-color: #296DCE;
   border-radius: 2px;
