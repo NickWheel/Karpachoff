@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'ProximaNovaBold';
   src: url(fonts/ProximaNova-Bold.ttf);
@@ -1825,6 +1826,472 @@ header .container ul a:nth-child(4) img {
           box-sizing: border-box;
 }
 
+.questions {
+  position: relative;
+  padding: 10px 0 50px 0;
+}
+
+.questions .container {
+  position: relative;
+}
+
+.questions .container .dropdown {
+  position: relative;
+}
+
+.questions .container .dropdown .dropdown_switcher {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 0;
+  cursor: pointer;
+}
+
+.questions .container .dropdown .dropdown_switcher .left_dropdown_switcher_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.questions .container .dropdown .dropdown_switcher .left_dropdown_switcher_block .short_line {
+  background-color: #222B3A;
+}
+
+.questions .container .dropdown .dropdown_switcher .left_dropdown_switcher_block h2 {
+  font-family: 'ProximaNovaBold';
+  font-size: 32px;
+  word-wrap: normal;
+  margin-left: 10px;
+}
+
+.questions .container .dropdown .dropdown_switcher .long_line {
+  width: 70%;
+  height: 3px;
+  background-color: #F1F1F1;
+  margin: 0 5px;
+}
+
+.questions .container .dropdown .dropdown_switcher img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.questions .container .dropdown #big_dropdown_questions {
+  display: none;
+}
+
+.questions .container .dropdown #big_dropdown_questions:checked + .dropdown_list {
+  display: none;
+}
+
+.questions .container .dropdown .dropdown_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+  width: 100%;
+  /*-------       надо везде тупо на 100% ставить */
+  margin: 0 auto;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  margin: 5px 0px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0;
+  cursor: pointer;
+  background-color: #FAFAFA;
+  border: 2px solid #EAEAEA;
+  border-radius: 3px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher h3 {
+  font-family: 'ProximaNovaBold';
+  font-size: 22px;
+  word-wrap: normal;
+  margin-left: 30px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 15px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block div img {
+  margin-right: 5px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block div p {
+  font-family: 'ProximaNovaBold';
+  font-size: 16px;
+  color: #0099DD;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label svg path {
+  fill: #D2DBE4;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label #likes1, .questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label #likes2, .questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label #likes3, .questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label #likes4, .questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label #likes5 {
+  display: none;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label #likes:checked + svg path, .questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label #likes1:checked + svg path,
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label #likes2:checked + svg path, .questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label #likes3:checked + svg path,
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label #likes4:checked + svg path {
+  fill: #EB5757;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label p {
+  font-family: 'ProximaNovaBold';
+  font-size: 20px;
+  color: #222B3A;
+  margin: 0 15px 0 5px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .triangle {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: rotate(-30deg) scale(1);
+          transform: rotate(-30deg) scale(1);
+  margin: 10px 30px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item #sub_dropdown_questions1, .questions .container .dropdown .dropdown_list .dropdown_item #sub_dropdown_questions2,
+.questions .container .dropdown .dropdown_list .dropdown_item #sub_dropdown_questions3, .questions .container .dropdown .dropdown_list .dropdown_item #sub_dropdown_questions4,
+.questions .container .dropdown .dropdown_list .dropdown_item #sub_dropdown_questions5 {
+  display: none;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item #sub_dropdown_questions1:checked + .sub_dropdown_content,
+.questions .container .dropdown .dropdown_list .dropdown_item #sub_dropdown_questions2:checked + .sub_dropdown_content,
+.questions .container .dropdown .dropdown_list .dropdown_item #sub_dropdown_questions3:checked + .sub_dropdown_content,
+.questions .container .dropdown .dropdown_list .dropdown_item #sub_dropdown_questions4:checked + .sub_dropdown_content,
+.questions .container .dropdown .dropdown_list .dropdown_item #sub_dropdown_questions5:checked + .sub_dropdown_content {
+  display: none;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment {
+  width: 100%;
+  position: relative;
+  border: 2px solid #F3F3F3;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 20px 15px;
+  width: 100%;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile img, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile img {
+  margin-right: 10px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile .user_info, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile .user_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile .user_info p:first-child, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile .user_info p:first-child {
+  font-family: 'ProximaNovaBold';
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile .user_info p:last-child, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile .user_info p:last-child {
+  font-family: 'ProximaNovaBold';
+  font-size: 14px;
+  color: #BDBDBD;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label #likes11, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label #likes22, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label #likes33, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label #likes44, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label #likes55, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label input, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label #likes11, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label #likes22, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label #likes33, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label #likes44, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label #likes55, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label input {
+  display: none;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label svg path, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label svg path {
+  fill: #D2DBE4;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label #likes11:checked + svg path, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label #likes22:checked + svg path,
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label #likes33:checked + svg path, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label #likes44:checked + svg path,
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label #likes55:checked + svg path, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label #likes11:checked + svg path, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label #likes22:checked + svg path,
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label #likes33:checked + svg path, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label #likes44:checked + svg path,
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label #likes55:checked + svg path {
+  fill: #EB5757;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile label p, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment .profile_and_likes .profile label p {
+  font-family: 'ProximaNovaBold';
+  font-size: 20px;
+  color: #222B3A;
+  margin: 0 15px 0 5px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment p, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .comment p {
+  font-family: 'ProximaNovaBold';
+  color: #696969;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment {
+  border: 3px solid #fff;
+  border-left: 3px solid #FC890D;
+  padding: 20px;
+  padding-left: 25px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile .user_info, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile .user_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 10px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile .user_info div, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile .user_info div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile .user_info div img, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile .user_info div img {
+  margin-right: 5px;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile .user_info div p, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile .user_info div p {
+  font-family: 'ProximaNovaBold';
+  color: #FC890D;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile .user_info p, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile .user_info p {
+  font-family: 'ProximaNovaBold';
+  font-size: 14px;
+  color: #BDBDBD;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile label svg path, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile label svg path {
+  fill: #D2DBE4;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile label #likes111, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile label #likes222, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile label #likes333, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile label #likes444, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile label #likes555, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile label #likes111, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile label #likes222, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile label #likes333, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile label #likes444, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile label #likes555 {
+  display: none;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile label #likes111:checked + svg path, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile label #likes222:checked + svg path,
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile label #likes333:checked + svg path, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile label #likes444:checked + svg path,
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment .profile_and_likes .profile label #likes555:checked + svg path, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile label #likes111:checked + svg path, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile label #likes222:checked + svg path,
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile label #likes333:checked + svg path, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile label #likes444:checked + svg path,
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment .profile_and_likes .profile label #likes555:checked + svg path {
+  fill: #EB5757;
+}
+
+.questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment p, .questions .container .dropdown .dropdown_list .dropdown_item .sub_comment .container .sub_comment p {
+  font-family: 'ProximaNovaBold';
+  color: #696969;
+}
+
 footer {
   padding: 40px 0;
   width: 100%;
@@ -2514,6 +2981,33 @@ footer .container .footer_card .phone {
     font-size: 16px;
   }
   .pay_attention .container .dropdown:hover .dropdown_list .dropdown_item:hover .sub_dropdown_content p {
+    font-size: 14px;
+  }
+  .questions .container {
+    width: 95%;
+  }
+  .questions .container .dropdown .dropdown_switcher .left_dropdown_switcher_block h2 {
+    font-size: 24px;
+  }
+  .questions .container .dropdown .dropdown_list .dropdown_item label {
+    font-size: 16px;
+  }
+  .questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher h3 {
+    font-size: 16px;
+  }
+  .questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block div p {
+    display: none;
+  }
+  .questions .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .right_dropdown_switcher_block label p {
+    font-size: 14px;
+  }
+  .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment {
+    font-size: 14px;
+  }
+  .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile .user_info p:first-child, .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .comment .profile_and_likes .profile .user_info p:last-child {
+    font-size: 14px;
+  }
+  .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container .sub_comment {
     font-size: 14px;
   }
 }

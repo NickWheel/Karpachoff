@@ -1256,31 +1256,321 @@ header {
                     }
                 }
             }
-           
         }
     }
 }
+.questions {
+    position: relative;
+    padding: 10px 0 50px 0;
+    .container {
+        position: relative;
+        .dropdown {
+            position: relative;
+            .dropdown_switcher {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 30px 0;
+                cursor: pointer;
+                .left_dropdown_switcher_block {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .short_line {
+                        background-color: $dark;
+                    }
+                    h2 {
+                        font-family: 'ProximaNovaBold';
+                        font-size: 32px;
+                        word-wrap: normal;
+                        margin-left: 10px;
+                    }
+                }
+                .long_line {
+                    width: 70%;
+                    height: 3px;
+                    background-color: #F1F1F1;
+                    margin: 0 5px;
+                }
+                img {
+                    transition: 0.3s;
+                    // transform: rotate(60deg);
+                }
+            }
 
 
 
 
 
+            #big_dropdown_questions {
+                display: none;
+            }
 
+            #triangle_spin:checked +.dropdown_switcher{
+                img {
+                    // transform: rotate(360deg) scale(1.3);
+                }
+            }
+            #big_dropdown_questions:checked + .dropdown_list {
+                display: none;
+            }
+            .dropdown_list {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                position: relative;
+                width: 100%;            /*-------       надо везде тупо на 100% ставить */
+                margin: 0 auto; 
+                .dropdown_item {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+                    margin: 5px 0px;
+                    // padding: 10px 0;         - корень многих проблем с контейнером у подменюшек
+                    .dropdown_switcher {
+                        width: 100%;
+                        position: relative;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 15px 0 ;
+                        cursor: pointer;
+                        background-color: #FAFAFA;
+                        border: 2px solid #EAEAEA;
+                        border-radius: 3px;
+                        h3 {
+                            font-family: 'ProximaNovaBold';
+                            font-size: 22px;
+                            word-wrap: normal;
+                            margin-left: 30px;
+                        }
+                        .right_dropdown_switcher_block {
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: center; 
+                            div {
+                                display: flex;
+                                justify-content: flex-end;
+                                align-items: center;
+                                margin-right: 15px;
+                                img {
+                                    margin-right: 5px;
+                                }
+                                p {
+                                    font-family: 'ProximaNovaBold';
+                                    font-size: 16px;
+                                    color: $teal;
+                                } 
+                            }
+                            label {
+                                display: flex;
+                                justify-content: flex-end;
+                                align-items: center;
+                                svg {
+                                    path {
+                                        fill: #D2DBE4;
+                                        transition: 0.3s;
+                                    }
+                                }
+                                #likes1, #likes2, #likes3, #likes4, #likes5 {
+                                    display: none;
+                                }
+                                #likes:checked + svg, #likes1:checked + svg,
+                                #likes2:checked + svg, #likes3:checked + svg,
+                                #likes4:checked + svg  {
+                                    path {
+                                        fill: #EB5757;
+                
+                                    }
+                                }
+                                p {
+                                    font-family: 'ProximaNovaBold';
+                                    font-size: 20px;
+                                    color: $dark;
+                                    margin: 0 15px 0 5px;
+                                } 
+                            }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        }
+                        .triangle {
+                            transition: 0.3s;
+                            transform: rotate(-30deg) scale(1);
+                            margin: 10px 30px;
+                        }
+                    }
+                    #sub_dropdown_questions1, #sub_dropdown_questions2,
+                    #sub_dropdown_questions3, #sub_dropdown_questions4,
+                    #sub_dropdown_questions5 {
+                        display: none;
+                    }
+                    #sub_dropdown_questions1:checked + .sub_dropdown_content,
+                    #sub_dropdown_questions2:checked + .sub_dropdown_content,
+                    #sub_dropdown_questions3:checked + .sub_dropdown_content,
+                    #sub_dropdown_questions4:checked + .sub_dropdown_content,
+                    #sub_dropdown_questions5:checked + .sub_dropdown_content {
+                        display: none;
+                    }
+                    .sub_dropdown_content, .sub_comment {
+                        width: 100%;
+                        position: relative;
+                        border: 2px solid #F3F3F3;
+                        .container {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: center;
+                            .comment {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-start;
+                                align-items: flex-start;
+                                padding: 20px 15px;
+                                width: 100%;
+                                .profile_and_likes {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;  
+                                    width: 100%;
+                                    position: relative;
+                                    .profile {
+                                        display: flex;
+                                        justify-content: flex-start;
+                                        align-items: center; 
+                                        margin-bottom: 10px;
+                                        img {
+                                            margin-right: 10px;
+                                        }
+                                        .user_info {
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: space-between;
+                                            align-items: flex-start;
+                                            p:first-child {
+                                                font-family: 'ProximaNovaBold';
+                                            }
+                                            p:last-child {
+                                                font-family: 'ProximaNovaBold';
+                                                font-size: 14px;
+                                                color: #BDBDBD;
+                                            }
+                                        }
+                                        label {
+                                            display: flex;
+                                            justify-content: flex-end;
+                                            align-items: center;
+                                            
+                                            #likes11, #likes22, #likes33, #likes44, #likes55, input {
+                                                display: none;
+                                            }
+                                            svg {
+                                                path {
+                                                    fill: #D2DBE4;
+                                                    transition: 0.3s;
+                                                }
+                                            }
+                                            #likes11:checked + svg, #likes22:checked + svg,
+                                            #likes33:checked + svg, #likes44:checked + svg,
+                                            #likes55:checked + svg  {
+                                                path {
+                                                    fill: #EB5757;
+                                                }
+                                            }
+                                            p {
+                                                font-family: 'ProximaNovaBold';
+                                                font-size: 20px;
+                                                color: $dark;
+                                                margin: 0 15px 0 5px;
+                                            } 
+                                        }
+                                    }
+                                }
+                                p {
+                                    font-family: 'ProximaNovaBold';
+                                    color: $grey;
+                                }
+                            }
+                            .sub_comment {
+                                border: 3px solid #fff;
+                                border-left: 3px solid $orange;
+                                padding: 20px;
+                                padding-left: 25px;
+            
+                                .profile_and_likes {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;  
+                                    margin-bottom: 10px;
+                                    .profile {
+                                        display: flex;
+                                        justify-content: flex-start;
+                                        align-items: center; 
+                                        .user_info {
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: flex-start;
+                                            align-items: flex-start;
+                                            margin-left: 10px;
+                                            div {
+                                                display: flex;
+                                                justify-content: flex-start;
+                                                align-items: center;
+                                                img {
+                                                    margin-right: 5px;
+                                                }
+                                                p {
+                                                    font-family: 'ProximaNovaBold';
+                                                    color: $orange;  
+                                                }
+                                            }
+                                            p {
+                                                font-family: 'ProximaNovaBold';
+                                                font-size: 14px;
+                                                color: #BDBDBD;
+                                            }
+                                        }
+                                        label {
+                                            svg {
+                                                path {
+                                                    fill: #D2DBE4;
+                                                    transition: 0.3s;
+                                                }
+                                            }
+                                            #likes111, #likes222, #likes333, #likes444, #likes555 {
+                                                display: none;
+                                            }
+                                            #likes111:checked + svg, #likes222:checked + svg,
+                                            #likes333:checked + svg, #likes444:checked + svg,
+                                            #likes555:checked + svg  {
+                                                path {
+                                                    fill: #EB5757;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                p {
+                                    font-family: 'ProximaNovaBold';
+                                    color: $grey;
+                                }
+                            }
+                        }
+                    }
+                    &:hover {
+                        .dropdown_switcher > img {
+                            // transform: rotate(360deg) scale(1.3);
+                        }
+                        
+                    }
+                }
+            }     
+        }
+    }
+}
 footer {
     padding: 40px 0;
     width: 100%;
@@ -2028,6 +2318,69 @@ footer {
             }
         }
     }
+    .questions {
+        .container {
+            width: 95%;
+            .dropdown {
+                .dropdown_switcher {
+                    .left_dropdown_switcher_block {
+                        h2 {
+                            font-size: 24px;
+                        }
+                        
+                    }
+                }
+                .dropdown_list {
+                    .dropdown_item {
+                        label {
+                            font-size: 16px;
+                        }
+                        .dropdown_switcher {
+                            h3 {
+                                font-size: 16px;
+                            }
+                            .right_dropdown_switcher_block {
+                                div {
+                                    p {
+                                        display: none;
+                                    }
+                                }
+                                label {
+                                    
+                                    // svg {
+                                    //     transform: scale(0.5);
+                                    // }
+                                    p {
+                                        font-size: 14px;
+                                    }
+                                    
+                                }
+                            }
+                        }
+                       .sub_dropdown_content {
+                           .container {
+                               .comment {
+                                   font-size: 14px;
+                                   .profile_and_likes {
+                                       .profile {
+                                           .user_info {
+                                               p:first-child, p:last-child {
+                                                   font-size: 14px;
+                                               }
+                                           }
+                                       }
+                                   }
+                               }
+                               .sub_comment {
+                                   font-size: 14px;
+                               }
+                           }
+                       } 
+                    }
+                }
+            }
+        }
+    } 
 
 }
 @media screen and (max-width: 480px) {

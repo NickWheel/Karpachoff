@@ -1,0 +1,22 @@
+#toggle {
+  display: none;
+}
+
+input:checked + .huyna {
+  display: none;
+}
+
+.label {
+  display: block;
+  width: 200px;
+  background-color: #696969;
+  color: white;
+}
+
+.huyna {
+  display: block;
+  width: 400px;
+  height: 200px;
+  background-color: yellow;
+}
+/*# sourceMappingURL=style.css.map */
