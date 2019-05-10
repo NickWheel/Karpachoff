@@ -293,145 +293,147 @@ header {
                     transform: rotate(60deg);
                 }
             }
-            .dropdown_list {
+            #big_dropdown_module_purposes {
                 display: none;
             }
-            &:hover {
-                .dropdown_switcher{
-                    img {
-                        transform: rotate(360deg) scale(1.3);
-                    }
+            #big_dropdown_module_purposes:checked + .dropdown_list {
+                display: none;
+            }
+            
+            .dropdown_switcher{
+                img {
+                    transform: rotate(360deg) scale(1.3);
                 }
-                .dropdown_list {
+            }
+            .dropdown_list {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                position: relative;
+                width: 95%;
+                margin: 0 auto; 
+                .long_line {
+                    width: 100%;
+                    height: 1px;
+                    background-color: #F1F1F1;
+                }
+                .dropdown_item {
+                    width: 100%;
                     display: flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: flex-start;
+                    justify-content: space-between;
+                    align-items: center;
                     position: relative;
-                    width: 95%;
-                    margin: 0 auto; 
-                    .long_line {
-                        width: 100%;
-                        height: 1px;
-                        background-color: #F1F1F1;
-                    }
-                    .dropdown_item {
-                        width: 100%;
+                    margin: 0px 5px;
+                    padding: 15px 0;
+                    background-color: #fff;
+                    .dropdown_item_text {
                         display: flex;
-                        justify-content: space-between;
+                        justify-content: flex-start;
                         align-items: center;
-                        position: relative;
-                        margin: 0px 5px;
-                        padding: 15px 0;
-                        background-color: #fff;
-                        .dropdown_item_text {
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            width: 90%;
-    
-                            .item_number {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                background-color: #F3F3F3;
-                                height: 10px;
-                                width: 10px;
-                                padding: 10px;
-                                margin-right: 10px;
-                                border-radius: 3px 0 3px 0;
-                                p {
-                                    font-family: 'ProximaNovaBold';
-    
-                                }
-                            }
-                            .item_text {
-                                max-width: 90%;
-                                font-family: 'ProximaNovaBold';
-                            }
-                        }
-    
-                        .checkbox_test {
+                        width: 90%;
+
+                        .item_number {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            *{ box-sizing: border-box; user-select: none; }
-                            input[type='checkbox']{ height: 0; width: 0; }
-                            input[type='checkbox'] + label{
-                                position: relative;
-                                display: flex;
-                                // margin: .6em 0;
-                                align-items: center;
-                                color: #9e9e9e;
-                                transition: color 250ms cubic-bezier(.4,.0,.23,1);
+                            background-color: #F3F3F3;
+                            height: 10px;
+                            width: 10px;
+                            padding: 10px;
+                            margin-right: 10px;
+                            border-radius: 3px 0 3px 0;
+                            p {
+                                font-family: 'ProximaNovaBold';
+
                             }
-    
-                            input[type='checkbox'] + label > span{
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                // margin-right: 1em;
-                                width: 1.5em;
-                                height: 1.5em;
-                                background: transparent;
-                                border: 2px solid #9E9E9E;
-                                border-radius: 2px;
-                                cursor: pointer;  
-                                transition: all 250ms cubic-bezier(.4,.0,.23,1);
+                        }
+                        .item_text {
+                            max-width: 90%;
+                            font-family: 'ProximaNovaBold';
+                        }
+                    }
+
+                    .checkbox_test {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        *{ box-sizing: border-box; user-select: none; }
+                        input[type='checkbox']{ height: 0; width: 0; }
+                        input[type='checkbox'] + label{
+                            position: relative;
+                            display: flex;
+                            // margin: .6em 0;
+                            align-items: center;
+                            color: #9e9e9e;
+                            transition: color 250ms cubic-bezier(.4,.0,.23,1);
+                        }
+
+                        input[type='checkbox'] + label > span{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            // margin-right: 1em;
+                            width: 1.5em;
+                            height: 1.5em;
+                            background: transparent;
+                            border: 2px solid #9E9E9E;
+                            border-radius: 2px;
+                            cursor: pointer;  
+                            transition: all 250ms cubic-bezier(.4,.0,.23,1);
+                        }
+                    
+                        input[type='checkbox'] + label:hover, input[type='checkbox']:focus + label{
+                            color: #fff;
+                        }
+                        input[type='checkbox'] + label:hover > span, input[type='checkbox']:focus + label > span{
+                            background: rgba(255,255,255,.1);
+                        }              
+                        input[type='checkbox']:checked + label > span{
+                            border: .5em solid $teal;
+                            background-color: $teal;
+                            animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
+                        }
+                        input[type='checkbox']:checked + label > span:before{
+                        content: "";
+                            position: absolute;
+                            top: 0.05em;
+                            // left: .2em;
+                            border-right: 3px solid transparent;
+                            border-bottom: 3px solid transparent;
+                            transform: rotate(45deg) scale(0.7);
+                            // transform-origin: 0% 100%;
+                            animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
+                        }
+                    
+                        @keyframes shrink-bounce{
+                            0%{
+                                transform: scale(1);
                             }
-                        
-                            input[type='checkbox'] + label:hover, input[type='checkbox']:focus + label{
-                                color: #fff;
+                            33%{    
+                                transform: scale(.85);
                             }
-                            input[type='checkbox'] + label:hover > span, input[type='checkbox']:focus + label > span{
-                                background: rgba(255,255,255,.1);
-                            }              
-                            input[type='checkbox']:checked + label > span{
-                                border: .5em solid $teal;
-                                background-color: $teal;
-                                animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
+                            100%{
+                                transform: scale(1);    
                             }
-                            input[type='checkbox']:checked + label > span:before{
-                            content: "";
-                                position: absolute;
-                                // top: .6em;
-                                // left: .2em;
-                                border-right: 3px solid transparent;
-                                border-bottom: 3px solid transparent;
-                                transform: rotate(45deg);
-                                // transform-origin: 0% 100%;
-                                animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
+                        }
+                        @keyframes checkbox-check{
+                            0%{
+                                width: 0;
+                                height: 0;
+                                border-color: #fff;
+                                transform: translate3d(0,0,0) rotate(45deg);
                             }
-                        
-                            @keyframes shrink-bounce{
-                                0%{
-                                    transform: scale(1);
-                                }
-                                33%{    
-                                    transform: scale(.85);
-                                }
-                                100%{
-                                    transform: scale(1);    
-                                }
+                            33%{
+                                width: .4em;
+                                height: 0;
+                                transform: translate3d(0,0,0) rotate(45deg);
                             }
-                            @keyframes checkbox-check{
-                                0%{
-                                    width: 0;
-                                    height: 0;
-                                    border-color: #fff;
-                                    transform: translate3d(0,0,0) rotate(45deg);
-                                }
-                                33%{
-                                    width: .4em;
-                                    height: 0;
-                                    transform: translate3d(0,0,0) rotate(45deg);
-                                }
-                                100%{    
-                                    width: .4em;
-                                    height: 1em;    
-                                    border-color: #fff;
-                                    transform: translate3d(0,0,0) rotate(45deg);
-                                }
+                            100%{    
+                                width: .4em;
+                                height: 1em;    
+                                border-color: #fff;
+                                transform: translate3d(0,0,0) rotate(45deg);
                             }
                         }
                     }
@@ -481,178 +483,180 @@ header {
                     transform: rotate(60deg);
                 }
             }
-            .cards_dropdown {
+            #big_dropdown_to_work {
                 display: none;
             }
-            &:hover {
-                .dropdown_switcher{
-                    img {
-                        transform: rotate(360deg) scale(1.3);
-                    }
+            #big_dropdown_to_work:checked + .cards_dropdown {
+                display: none;
+            }
+            
+            .dropdown_switcher{
+                img {
+                    transform: rotate(360deg) scale(1.3);
                 }
-                .cards_dropdown {
+            }
+            .cards_dropdown {
+                position: relative;
+                display: block;
+
+                .card {
                     position: relative;
-                    display: block;
+                    background-color: #fff;
+                    border: 2px solid #FAFAFA;
+                    margin: 10px 0;
+                    min-height: 150px;                                                    /*   hz -------------------------------------- */
+                    transition: all 0.3s;
+                    .adaptive_card_title {
+                        display: none;
+                    }
+                    .card_number {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 10px;
+                        height: 10px;
+                        padding: 10px;
+                        background-color: #F3F3F3;
 
-                    .card {
-                        position: relative;
-                        background-color: #fff;
-                        border: 2px solid #FAFAFA;
-                        margin: 10px 0;
-                        min-height: 150px;                                                    /*   hz -------------------------------------- */
-                        transition: all 0.3s;
-                        .adaptive_card_title {
-                            display: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        p{
+                            font-family: 'ProximaNovaBold';
                         }
+                    }
+                    &:hover {
+                        border-color: $orange;
                         .card_number {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 10px;
-                            height: 10px;
-                            padding: 10px;
-                            background-color: #F3F3F3;
-
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            p{
-                                font-family: 'ProximaNovaBold';
+                            background-color: $orange;
+                            p {
+                                color: #fff;
                             }
                         }
-                        &:hover {
-                            border-color: $orange;
-                            .card_number {
-                                background-color: $orange;
-                                p {
-                                    color: #fff;
-                                }
-                            }
-                        }
-                        .container {
+                    }
+                    .container {
+                        position: relative;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 90%;
+                        .card_left_side {
                             position: relative;
                             display: flex;
-                            justify-content: space-between;
+                            justify-content: flex-start;
                             align-items: center;
-                            width: 90%;
-                            .card_left_side {
+                            width: 70%; 
+                            .card_info {
                                 position: relative;
                                 display: flex;
-                                justify-content: flex-start;
-                                align-items: center;
-                                width: 70%; 
-                                .card_info {
-                                    position: relative;
+                                flex-direction: column;
+                                justify-content: center;                      /*  hz right ili ne --------------------------------*/
+                                align-items:  flex-start;                     
+                                margin-left: 10%;
+                                .card_top_info {
                                     display: flex;
-                                    flex-direction: column;
-                                    justify-content: center;                      /*  hz right ili ne --------------------------------*/
-                                    align-items:  flex-start;                     
-                                    margin-left: 10%;
-                                    .card_top_info {
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    div:nth-child(1), div:nth-child(2), div:nth-child(3) {            /*  hz right ili ne --------------------------------*/
                                         display: flex;
                                         justify-content: flex-start;
                                         align-items: center;
-                                        div:nth-child(1), div:nth-child(2), div:nth-child(3) {            /*  hz right ili ne --------------------------------*/
-                                            display: flex;
-                                            justify-content: flex-start;
-                                            align-items: center;
-                                            margin: 40px 15px 15px 0;
-                                            img {
-                                                margin: 5px;
-                                            }
-                                            p {
-                                                font-family: 'ProximaNovaBold';
-                                                color: #979FAD;
-                                            }
-                                            .info_practice {
-                                                color: $teal;
-                                            }
+                                        margin: 40px 15px 15px 0;
+                                        img {
+                                            margin: 5px;
+                                        }
+                                        p {
+                                            font-family: 'ProximaNovaBold';
+                                            color: #979FAD;
+                                        }
+                                        .info_practice {
+                                            color: $teal;
                                         }
                                     }
-                                    h3 {
-                                        font-family: 'ProximaNovaBold';
-                                        font-size: 24px;
-                                        margin-bottom: 25px;
-                                    }
-                                    .card_bot_info {
+                                }
+                                h3 {
+                                    font-family: 'ProximaNovaBold';
+                                    font-size: 24px;
+                                    margin-bottom: 25px;
+                                }
+                                .card_bot_info {
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    div:nth-child(1), div:nth-child(2) {
                                         display: flex;
                                         justify-content: flex-start;
                                         align-items: center;
-                                        div:nth-child(1), div:nth-child(2) {
-                                            display: flex;
-                                            justify-content: flex-start;
-                                            align-items: center;
-                                            margin: 0 25px 40px 0;
-                                            cursor: pointer;
+                                        margin: 0 25px 40px 0;
+                                        cursor: pointer;
+                                        svg {
+                                            margin-right: 10px;
+                                            path {
+                                                transition: all 0.3s;
+                                            }
+                                        }
+                                        p {
+                                            color: #696969;
+                                            transition: all 0.3s;
+                                            font-family: 'ProximaNovaBold';
+                                            font-size: 18px;
+                                        }
+                                        &:hover {
                                             svg {
-                                                margin-right: 10px;
                                                 path {
-                                                    transition: all 0.3s;
+                                                    fill: $orange;
                                                 }
                                             }
                                             p {
-                                                color: #696969;
-                                                transition: all 0.3s;
-                                                font-family: 'ProximaNovaBold';
-                                                font-size: 18px;
-                                            }
-                                            &:hover {
-                                                svg {
-                                                    path {
-                                                        fill: $orange;
-                                                    }
-                                                }
-                                                p {
-                                                    color: $orange;
-                                                }
+                                                color: $orange;
                                             }
                                         }
                                     }
                                 }
                             }
-                            .toggle_switch {
-                                transform: scale(2);
-                                input[type=checkbox]{
-                                    height: 0;
-                                    width: 0;
-                                    visibility: hidden;
-                                }
-                                
-                                label {
-                                    cursor: pointer;
-                                    text-indent: -9999px;
-                                    width: 40px;
-                                    height: 20px;
-                                    background: #DFDADA;
-                                    display: block;
-                                    border-radius: 20px;
-                                    position: relative;
-                                }
-                                
-                                label:after {
-                                    content: '';
-                                    position: absolute;
-                                    top: 3px;
-                                    left: 3px;
-                                    width: 14px;
-                                    height: 14px;
-                                    background: #fff;
-                                    border-radius: 14px;
-                                    transition: 0.3s;
-                                }
-                                
-                                input:checked + label {
-                                    background: $orange;
-                                }
-                                
-                                input:checked + label:after {
-                                    left: calc(100% - 3px);
-                                    transform: translateX(-100%);
-                                }
-                                
-                                label:active:after {
-                                    width: 20px;
-                                }
+                        }
+                        .toggle_switch {
+                            transform: scale(2);
+                            input[type=checkbox]{
+                                height: 0;
+                                width: 0;
+                                visibility: hidden;
+                            }
+                            
+                            label {
+                                cursor: pointer;
+                                text-indent: -9999px;
+                                width: 40px;
+                                height: 20px;
+                                background: #DFDADA;
+                                display: block;
+                                border-radius: 20px;
+                                position: relative;
+                            }
+                            
+                            label:after {
+                                content: '';
+                                position: absolute;
+                                top: 3px;
+                                left: 3px;
+                                width: 14px;
+                                height: 14px;
+                                background: #fff;
+                                border-radius: 14px;
+                                transition: 0.3s;
+                            }
+                            
+                            input:checked + label {
+                                background: $orange;
+                            }
+                            
+                            input:checked + label:after {
+                                left: calc(100% - 3px);
+                                transform: translateX(-100%);
+                            }
+                            
+                            label:active:after {
+                                width: 20px;
                             }
                         }
                     }
@@ -707,178 +711,180 @@ header {
                     transform: rotate(60deg);
                 }
             }
-            .cards_dropdown {
+            #big_dropdown_additional_tasks {
                 display: none;
             }
-            &:hover {
-                .dropdown_switcher{
-                    img {
-                        transform: rotate(360deg) scale(1.3);
-                    }
+            #big_dropdown_additional_tasksLchecked + .cards_dropdown {
+                display: none;
+            }
+            
+            .dropdown_switcher{
+                img {
+                    transform: rotate(360deg) scale(1.3);
                 }
-                .cards_dropdown {
+            }
+            .cards_dropdown {
+                position: relative;
+                display: block;
+
+                .card {
                     position: relative;
-                    display: block;
+                    background-color: #fff;
+                    border: 2px solid #FAFAFA;
+                    margin: 10px 0;
+                    min-height: 150px;                                                    /*   hz -------------------------------------- */
+                    transition: all 0.3s;
+                    .adaptive_card_title {
+                        display: none;
+                    }
+                    .card_number {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 10px;
+                        height: 10px;
+                        padding: 10px;
+                        background-color: #F3F3F3;
 
-                    .card {
-                        position: relative;
-                        background-color: #fff;
-                        border: 2px solid #FAFAFA;
-                        margin: 10px 0;
-                        min-height: 150px;                                                    /*   hz -------------------------------------- */
-                        transition: all 0.3s;
-                        .adaptive_card_title {
-                            display: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        p{
+                            font-family: 'ProximaNovaBold';
                         }
+                    }
+                    &:hover {
+                        border-color: $orange;
                         .card_number {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 10px;
-                            height: 10px;
-                            padding: 10px;
-                            background-color: #F3F3F3;
-
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            p{
-                                font-family: 'ProximaNovaBold';
+                            background-color: $orange;
+                            p {
+                                color: #fff;
                             }
                         }
-                        &:hover {
-                            border-color: $orange;
-                            .card_number {
-                                background-color: $orange;
-                                p {
-                                    color: #fff;
-                                }
-                            }
-                        }
-                        .container {
+                    }
+                    .container {
+                        position: relative;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 90%;
+                        .card_left_side {
                             position: relative;
                             display: flex;
-                            justify-content: space-between;
+                            justify-content: flex-start;
                             align-items: center;
-                            width: 90%;
-                            .card_left_side {
+                            width: 70%; 
+                            .card_info {
                                 position: relative;
                                 display: flex;
-                                justify-content: flex-start;
-                                align-items: center;
-                                width: 70%; 
-                                .card_info {
-                                    position: relative;
+                                flex-direction: column;
+                                justify-content: center;                      /*  hz right ili ne --------------------------------*/
+                                align-items:  flex-start;                     
+                                margin-left: 10%;
+                                .card_top_info {
                                     display: flex;
-                                    flex-direction: column;
-                                    justify-content: center;                      /*  hz right ili ne --------------------------------*/
-                                    align-items:  flex-start;                     
-                                    margin-left: 10%;
-                                    .card_top_info {
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    div:nth-child(1), div:nth-child(2), div:nth-child(3) {            /*  hz right ili ne --------------------------------*/
                                         display: flex;
                                         justify-content: flex-start;
                                         align-items: center;
-                                        div:nth-child(1), div:nth-child(2), div:nth-child(3) {            /*  hz right ili ne --------------------------------*/
-                                            display: flex;
-                                            justify-content: flex-start;
-                                            align-items: center;
-                                            margin: 40px 15px 15px 0;
-                                            img {
-                                                margin: 5px;
-                                            }
-                                            p {
-                                                font-family: 'ProximaNovaBold';
-                                                color: #979FAD;
-                                            }
-                                            .info_practice {
-                                                color: $teal;
-                                            }
+                                        margin: 40px 15px 15px 0;
+                                        img {
+                                            margin: 5px;
+                                        }
+                                        p {
+                                            font-family: 'ProximaNovaBold';
+                                            color: #979FAD;
+                                        }
+                                        .info_practice {
+                                            color: $teal;
                                         }
                                     }
-                                    h3 {
-                                        font-family: 'ProximaNovaBold';
-                                        font-size: 24px;
-                                        margin-bottom: 25px;
-                                    }
-                                    .card_bot_info {
+                                }
+                                h3 {
+                                    font-family: 'ProximaNovaBold';
+                                    font-size: 24px;
+                                    margin-bottom: 25px;
+                                }
+                                .card_bot_info {
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    div:nth-child(1), div:nth-child(2) {
                                         display: flex;
                                         justify-content: flex-start;
                                         align-items: center;
-                                        div:nth-child(1), div:nth-child(2) {
-                                            display: flex;
-                                            justify-content: flex-start;
-                                            align-items: center;
-                                            margin: 0 25px 40px 0;
-                                            cursor: pointer;
+                                        margin: 0 25px 40px 0;
+                                        cursor: pointer;
+                                        svg {
+                                            margin-right: 10px;
+                                            path {
+                                                transition: all 0.3s;
+                                            }
+                                        }
+                                        p {
+                                            color: #696969;
+                                            transition: all 0.3s;
+                                            font-family: 'ProximaNovaBold';
+                                            font-size: 18px;
+                                        }
+                                        &:hover {
                                             svg {
-                                                margin-right: 10px;
                                                 path {
-                                                    transition: all 0.3s;
+                                                    fill: $orange;
                                                 }
                                             }
                                             p {
-                                                color: #696969;
-                                                transition: all 0.3s;
-                                                font-family: 'ProximaNovaBold';
-                                                font-size: 18px;
-                                            }
-                                            &:hover {
-                                                svg {
-                                                    path {
-                                                        fill: $orange;
-                                                    }
-                                                }
-                                                p {
-                                                    color: $orange;
-                                                }
+                                                color: $orange;
                                             }
                                         }
                                     }
                                 }
                             }
-                            .toggle_switch {
-                                transform: scale(2);
-                                input[type=checkbox]{
-                                    height: 0;
-                                    width: 0;
-                                    visibility: hidden;
-                                }
-                                
-                                label {
-                                    cursor: pointer;
-                                    text-indent: -9999px;
-                                    width: 40px;
-                                    height: 20px;
-                                    background: #DFDADA;
-                                    display: block;
-                                    border-radius: 20px;
-                                    position: relative;
-                                }
-                                
-                                label:after {
-                                    content: '';
-                                    position: absolute;
-                                    top: 3px;
-                                    left: 3px;
-                                    width: 14px;
-                                    height: 14px;
-                                    background: #fff;
-                                    border-radius: 14px;
-                                    transition: 0.3s;
-                                }
-                                
-                                input:checked + label {
-                                    background: $orange;
-                                }
-                                
-                                input:checked + label:after {
-                                    left: calc(100% - 3px);
-                                    transform: translateX(-100%);
-                                }
-                                
-                                label:active:after {
-                                    width: 20px;
-                                }
+                        }
+                        .toggle_switch {
+                            transform: scale(2);
+                            input[type=checkbox]{
+                                height: 0;
+                                width: 0;
+                                visibility: hidden;
+                            }
+                            
+                            label {
+                                cursor: pointer;
+                                text-indent: -9999px;
+                                width: 40px;
+                                height: 20px;
+                                background: #DFDADA;
+                                display: block;
+                                border-radius: 20px;
+                                position: relative;
+                            }
+                            
+                            label:after {
+                                content: '';
+                                position: absolute;
+                                top: 3px;
+                                left: 3px;
+                                width: 14px;
+                                height: 14px;
+                                background: #fff;
+                                border-radius: 14px;
+                                transition: 0.3s;
+                            }
+                            
+                            input:checked + label {
+                                background: $orange;
+                            }
+                            
+                            input:checked + label:after {
+                                left: calc(100% - 3px);
+                                transform: translateX(-100%);
+                            }
+                            
+                            label:active:after {
+                                width: 20px;
                             }
                         }
                     }
@@ -927,200 +933,202 @@ header {
                     transform: rotate(60deg);
                 }
             }
-            .dropdown_list {
+            #big_dropdown_what_to_check {
                 display: none;
             }
-            &:hover {
-                .dropdown_switcher{
-                    img {
-                        transform: rotate(360deg) scale(1.3);
-                    }
+            #big_dropdown_what_to_check:checked + .dropdown_list {
+                display: none;
+            }
+            
+            .dropdown_switcher{
+                img {
+                    transform: rotate(360deg) scale(1.3);
                 }
-                .dropdown_list {
+            }
+            .dropdown_list {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                position: relative;
+                width: 95%;
+                margin: 0 auto; 
+                .long_line {
+                    width: 100%;
+                    height: 3px;
+                    background-color: #F1F1F1;
+                    position: relative;
+                }
+                .dropdown_block {
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-start;
-                    align-items: flex-start;
+                    // align-items: flex-start;
                     position: relative;
-                    width: 95%;
-                    margin: 0 auto; 
-                    .long_line {
-                        width: 100%;
-                        height: 3px;
-                        background-color: #F1F1F1;
-                        position: relative;
-                    }
-                    .dropdown_block {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: flex-start;
-                        // align-items: flex-start;
-                        position: relative;
-                        width: 100%;
+                    width: 100%;
 
-                        &:last-child {
-                            .alarm {
+                    &:last-child {
+                        .alarm {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            position: relative;
+                            background-color: $orange;
+                            border-radius: 3px;
+                            width: 100%;
+                            margin: 30px 0 20px 0;
+                            img {
+                                margin: 15px;
+                            }
+                            p {
+                                font-family: 'ProximaNovaBold';
+                                font-size: 18px;
+                                color: #fff;
+                            }
+                        }
+                        h3 {
+                            color: $orange;
+                        }
+                        .dropdown_item_content {
+                            .dropdown_item {
+                                .checkbox_test {
+                                    input[type='checkbox']:checked + label > span{
+                                        border: .5em solid $orange;
+                                        background-color: $orange;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    h3 {
+                        font-family: 'ProximaNovaBold';
+                        font-size: 24px;
+                        color: $teal;
+                        margin-bottom: 15px;
+                    }
+                    .dropdown_item_content {
+                        position: relative;
+                        // width: 100%;
+
+
+                        .dropdown_item {
+                            // width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            position: relative;
+                            margin: 3px 5px;
+                            padding: 25px 20px;
+                            background-color: #fff;
+                            border-radius: 3px;
+                            .dropdown_item_text {
                                 display: flex;
                                 justify-content: flex-start;
                                 align-items: center;
-                                position: relative;
-                                background-color: $orange;
-                                border-radius: 3px;
-                                width: 100%;
-                                margin: 30px 0 20px 0;
-                                img {
-                                    margin: 15px;
-                                }
-                                p {
-                                    font-family: 'ProximaNovaBold';
-                                    font-size: 18px;
-                                    color: #fff;
-                                }
-                            }
-                            h3 {
-                                color: $orange;
-                            }
-                            .dropdown_item_content {
-                                .dropdown_item {
-                                    .checkbox_test {
-                                        input[type='checkbox']:checked + label > span{
-                                            border: .5em solid $orange;
-                                            background-color: $orange;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        h3 {
-                            font-family: 'ProximaNovaBold';
-                            font-size: 24px;
-                            color: $teal;
-                            margin-bottom: 15px;
-                        }
-                        .dropdown_item_content {
-                            position: relative;
-                            // width: 100%;
-
-
-                            .dropdown_item {
-                                // width: 100%;
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                position: relative;
-                                margin: 3px 5px;
-                                padding: 25px 20px;
-                                background-color: #fff;
-                                border-radius: 3px;
-                                .dropdown_item_text {
-                                    display: flex;
-                                    justify-content: flex-start;
-                                    align-items: center;
-                                    // width: 90%;
-            
-                                    .item_number {
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                        background-color: #F3F3F3;
-                                        height: 10px;
-                                        width: 10px;
-                                        padding: 10px;
-                                        margin-right: 10px;
-                                        border-radius: 3px 0 3px 0;
-                                        p {
-                                            font-family: 'ProximaNovaBold';
-            
-                                        }
-                                    }
-                                    .item_text {
-                                        max-width: 90%;
-                                        font-family: 'ProximaNovaBold';
-                                    }
-                                }
-            
-                                .checkbox_test {
+                                // width: 90%;
+        
+                                .item_number {
                                     display: flex;
                                     justify-content: center;
                                     align-items: center;
-                                    *{ box-sizing: border-box; user-select: none; }
-                                    input[type='checkbox']{ height: 0; width: 0; }
-                                    input[type='checkbox'] + label{
-                                        position: relative;
-                                        display: flex;
-                                        // margin: .6em 0;
-                                        align-items: center;
-                                        color: #9e9e9e;
-                                        transition: color 250ms cubic-bezier(.4,.0,.23,1);
+                                    background-color: #F3F3F3;
+                                    height: 10px;
+                                    width: 10px;
+                                    padding: 10px;
+                                    margin-right: 10px;
+                                    border-radius: 3px 0 3px 0;
+                                    p {
+                                        font-family: 'ProximaNovaBold';
+        
                                     }
-            
-                                    input[type='checkbox'] + label > span{
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                        // margin-right: 1em;
-                                        width: 1.5em;
-                                        height: 1.5em;
-                                        background: transparent;
-                                        border: 2px solid #9E9E9E;
-                                        border-radius: 2px;
-                                        cursor: pointer;  
-                                        transition: all 250ms cubic-bezier(.4,.0,.23,1);
+                                }
+                                .item_text {
+                                    max-width: 90%;
+                                    font-family: 'ProximaNovaBold';
+                                }
+                            }
+        
+                            .checkbox_test {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                *{ box-sizing: border-box; user-select: none; }
+                                input[type='checkbox']{ height: 0; width: 0; }
+                                input[type='checkbox'] + label{
+                                    position: relative;
+                                    display: flex;
+                                    // margin: .6em 0;
+                                    align-items: center;
+                                    color: #9e9e9e;
+                                    transition: color 250ms cubic-bezier(.4,.0,.23,1);
+                                }
+        
+                                input[type='checkbox'] + label > span{
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    // margin-right: 1em;
+                                    width: 1.5em;
+                                    height: 1.5em;
+                                    background: transparent;
+                                    border: 2px solid #9E9E9E;
+                                    border-radius: 2px;
+                                    cursor: pointer;  
+                                    transition: all 250ms cubic-bezier(.4,.0,.23,1);
+                                }
+                            
+                                input[type='checkbox'] + label:hover, input[type='checkbox']:focus + label{
+                                    color: #fff;
+                                }
+                                input[type='checkbox'] + label:hover > span, input[type='checkbox']:focus + label > span{
+                                    background: rgba(255,255,255,.1);
+                                }              
+                                input[type='checkbox']:checked + label > span{
+                                    border: .5em solid $teal;
+                                    background-color: $teal;
+                                    animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
+                                }
+                                input[type='checkbox']:checked + label > span:before{
+                                content: "";
+                                    position: absolute;
+                                    top: 0.05em;
+                                    // left: .2em;
+                                    border-right: 3px solid transparent;
+                                    border-bottom: 3px solid transparent;
+                                    transform: rotate(45deg);
+                                    // transform-origin: 0% 100%;
+                                    animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
+                                }
+                            
+                                @keyframes shrink-bounce{
+                                    0%{
+                                        transform: scale(1);
                                     }
-                                
-                                    input[type='checkbox'] + label:hover, input[type='checkbox']:focus + label{
-                                        color: #fff;
+                                    33%{    
+                                        transform: scale(.85);
                                     }
-                                    input[type='checkbox'] + label:hover > span, input[type='checkbox']:focus + label > span{
-                                        background: rgba(255,255,255,.1);
-                                    }              
-                                    input[type='checkbox']:checked + label > span{
-                                        border: .5em solid $teal;
-                                        background-color: $teal;
-                                        animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
+                                    100%{
+                                        transform: scale(1);    
                                     }
-                                    input[type='checkbox']:checked + label > span:before{
-                                    content: "";
-                                        position: absolute;
-                                        // top: .6em;
-                                        // left: .2em;
-                                        border-right: 3px solid transparent;
-                                        border-bottom: 3px solid transparent;
-                                        transform: rotate(45deg);
-                                        // transform-origin: 0% 100%;
-                                        animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
+                                }
+                                @keyframes checkbox-check{
+                                    0%{
+                                        width: 0;
+                                        height: 0;
+                                        border-color: #fff;
+                                        transform: translate3d(0,0,0) rotate(45deg);
                                     }
-                                
-                                    @keyframes shrink-bounce{
-                                        0%{
-                                            transform: scale(1);
-                                        }
-                                        33%{    
-                                            transform: scale(.85);
-                                        }
-                                        100%{
-                                            transform: scale(1);    
-                                        }
+                                    33%{
+                                        width: .4em;
+                                        height: 0;
+                                        transform: translate3d(0,0,0) rotate(45deg);
                                     }
-                                    @keyframes checkbox-check{
-                                        0%{
-                                            width: 0;
-                                            height: 0;
-                                            border-color: #fff;
-                                            transform: translate3d(0,0,0) rotate(45deg);
-                                        }
-                                        33%{
-                                            width: .4em;
-                                            height: 0;
-                                            transform: translate3d(0,0,0) rotate(45deg);
-                                        }
-                                        100%{    
-                                            width: .4em;
-                                            height: 1em;    
-                                            border-color: #fff;
-                                            transform: translate3d(0,0,0) rotate(45deg);
-                                        }
+                                    100%{    
+                                        width: .4em;
+                                        height: 1em;    
+                                        border-color: #fff;
+                                        transform: translate3d(0,0,0) rotate(45deg);
                                     }
                                 }
                             }
@@ -1172,90 +1180,100 @@ header {
                 }
             }
             .dropdown_list {
-                display: none;
-            }
-            &:hover {
-                .dropdown_switcher{
-                    img {
-                        transform: rotate(360deg) scale(1.3);
-                    }
-                }
-                .dropdown_list {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                position: relative;
+                width: 95%;
+                margin: 0 auto; 
+                .dropdown_item {
+                    width: 100%;
                     display: flex;
                     flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: flex-start;
+                    justify-content: space-between;
+                    align-items: center;
                     position: relative;
-                    width: 95%;
-                    margin: 0 auto; 
-                    .dropdown_item {
+                    margin: 0px 5px;
+                    padding: 15px 0;
+                    .dropdown_switcher {
                         width: 100%;
+                        position: relative;
                         display: flex;
-                        flex-direction: column;
                         justify-content: space-between;
                         align-items: center;
-                        position: relative;
-                        margin: 0px 5px;
-                        padding: 15px 0;
-                        .dropdown_switcher {
-                            width: 100%;
-                            position: relative;
+                        padding: 10px 0 ;
+                        cursor: pointer;
+                        background-color: #FAFAFA;
+                        border: 2px solid #EAEAEA;
+                        .left_dropdown_switcher_block {
                             display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            padding: 10px 0 ;
-                            cursor: pointer;
-                            background-color: #FAFAFA;
-                            border: 2px solid #EAEAEA;
-                            .left_dropdown_switcher_block {
-                                display: flex;
-                                justify-content: flex-start;
-                                align-items: center; 
-                                img {
-                                    margin: 10px 30px;
-                                    transform: rotate(0deg) scale(1);
-                                }
-                                h3 {
-                                    font-family: 'ProximaNovaBold';
-                                    font-size: 22px;
-                                    word-wrap: normal;
-                                    margin-left: 10px;
-                                }
-                            }
+                            justify-content: flex-start;
+                            align-items: center; 
                             img {
-                                transition: 0.3s;
-                                transform: rotate(-30deg) scale(1);
                                 margin: 10px 30px;
+                                transform: rotate(0deg) scale(1);
+                            }
+                            h3 {
+                                font-family: 'ProximaNovaBold';
+                                font-size: 22px;
+                                word-wrap: normal;
+                                margin-left: 10px;
                             }
                         }
-                        .sub_dropdown_content {
-                            display: none;
-                        }
-                        &:hover {
-                            .dropdown_switcher > img {
-                                transform: rotate(360deg) scale(1.3);
-                            }
-                            .sub_dropdown_content {
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: flex-start;
-                                align-items: flex-start;
-                                position: relative;
-                                width: 100%;
-                                margin: 0 auto; 
-                                p {
-                                    font-family: 'ProximaNovaSemibold';
-                                    font-size: 16px;
-                                    color: #696969;
-                                    border: 2px solid #F3F3F3;
-                                    padding: 15px;
-                                    box-sizing: border-box;
-                                }
-                            }
+                        img {
+                            transition: 0.3s;
+                            transform: rotate(-30deg) scale(1);
+                            margin: 10px 30px;
                         }
                     }
+                    #sub_dropdown_pay_attention1, #sub_dropdown_pay_attention2,#sub_dropdown_pay_attention3 {
+                        display: none;
+                    }
+                    #sub_dropdown_pay_attention1:checked + .sub_dropdown_content,
+                    #sub_dropdown_pay_attention2:checked + .sub_dropdown_content,
+                    #sub_dropdown_pay_attention3:checked + .sub_dropdown_content
+                    .sub_dropdown_content {
+                        display: none;
+                    }
+                    
+                    .dropdown_switcher > img {
+                        transform: rotate(360deg) scale(1.3);
+                    }
+                    .sub_dropdown_content {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        position: relative;
+                        width: 100%;
+                        margin: 0 auto; 
+                        p {
+                            font-family: 'ProximaNovaSemibold';
+                            font-size: 16px;
+                            color: #696969;
+                            border: 2px solid #F3F3F3;
+                            padding: 15px;
+                            box-sizing: border-box;
+                        }
+                    }
+                    
                 }
             }
+            #big_dropdown_pay_attention {
+                display: none;
+            }
+            #big_dropdown_pay_attention:checked + .dropdown_list {
+                display: none;
+            }
+            // &:hover {
+                // .dropdown_switcher{
+                //     img {
+                //         transform: rotate(360deg) scale(1.3);
+                //     }
+                // }
+                
+            // }
         }
     }
 }
@@ -1639,30 +1657,6 @@ footer {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 1400px) {
     .title_screen {
         &::before {
@@ -1823,18 +1817,17 @@ footer {
                         }
                     }
                 }
-                &:hover {
-                    .dropdown_list {
-                        .dropdown_block {
-                            h3 {
-                                font-size: 16px;
-                            }
-                            .dropdown_item_content {
-                                .dropdown_item {
-                                    .dropdown_item_text {
-                                        .item_text {
-                                            font-size: 14px;
-                                        }
+                
+                .dropdown_list {
+                    .dropdown_block {
+                        h3 {
+                            font-size: 16px;
+                        }
+                        .dropdown_item_content {
+                            .dropdown_item {
+                                .dropdown_item_text {
+                                    .item_text {
+                                        font-size: 14px;
                                     }
                                 }
                             }
@@ -1857,208 +1850,189 @@ footer {
                     }
                 }
 
-                &:hover {
-                    .cards_dropdown {
-                        .card {
-                            &:hover {
-                                .adaptive_card_title {
-                                    .adaptive_card_left_block {
-                                        .card_number_adaptive {
-                                            background-color: $orange;
-                                        }
+                
+                .cards_dropdown {
+                    .card {
+                        &:hover {
+                            .adaptive_card_title {
+                                .adaptive_card_left_block {
+                                    .card_number_adaptive {
+                                        background-color: $orange;
                                     }
                                 }
                             }
-                            .card_number {
-                                display: none;
-                            }
-                            .adaptive_card_title {
+                        }
+                        .card_number {
+                            display: none;
+                        }
+                        .adaptive_card_title {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            margin: 30px auto 0 auto;
+                            width: 95%;
+                            .adaptive_card_left_block {
                                 display: flex;
-                                flex-direction: row;
-                                justify-content: space-between;
+                                justify-content: flex-start;
                                 align-items: center;
 
-                                margin: 30px auto 0 auto;
-                                width: 95%;
-                                .adaptive_card_left_block {
+                                .card_number_adaptive {
+                                    position: relative;
+                                    top: 0;
+                                    left: 0;
+                                    width: 10px;
+                                    height: 10px;
+                                    padding: 10px;
+                                    margin-right: 30px;
+                                    background-color: #F3F3F3;
+                                    border-radius: 3px 0 3px 0;
+                                    transition: all 0.3s;
+        
                                     display: flex;
-                                    justify-content: flex-start;
+                                    justify-content: center;
                                     align-items: center;
+                                }
+                                .left_side_img_adaptive {
+                                    margin-top: 10px;
+                                    margin-bottom: 15px;
+                                }
+                            }
+                            .toggle_switch_adaptive {
+                                transform: scale(1);
+                                input[type=checkbox]{
+                                    height: 0;
+                                    width: 0;
+                                    visibility: hidden;
+                                }
+                                
+                                label {
+                                    cursor: pointer;
+                                    text-indent: -9999px;
+                                    width: 80px;
+                                    height: 40px;
+                                    background: #DFDADA;
+                                    display: block;
+                                    border-radius: 40px;
+                                    position: relative;
+                                }
+                                
+                                label:after {
+                                    content: '';
+                                    position: absolute;
+                                    top: 6px;
+                                    left: 6px;
+                                    width: 28px;
+                                    height: 28px;
+                                    background: #fff;
+                                    border-radius: 28px;
+                                    transition: 0.3s;
+                                }
+                                
+                                input:checked + label {
+                                    background: $orange;
+                                }
+                                
+                                input:checked + label:after {
+                                    left: calc(100% - 6px);
+                                    transform: translateX(-100%);
+                                }
+                                
+                                label:active:after {
+                                    width: 40px;
+                                }
+                            }
+                        }
+                        .container {
+                            position: relative;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: flex-start;                            
+                            width: 95%;
+                            .card_left_side {
+                                position: relative;
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                width: 95%; 
+                                .left_side_img {
+                                    display: none;
+                                }
 
-                                    .card_number_adaptive {
-                                        position: relative;
-                                        top: 0;
-                                        left: 0;
-                                        width: 10px;
-                                        height: 10px;
-                                        padding: 10px;
-                                        margin-right: 30px;
-                                        background-color: #F3F3F3;
-                                        border-radius: 3px 0 3px 0;
-                                        transition: all 0.3s;
-            
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
+
+                                
+                                .card_info {
+                                    position: relative;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;                      
+                                    align-items:  flex-start;                     
+                                    margin-left: 0;
+                                    .card_top_info {
+                                        div:nth-child(1), div:nth-child(2), div:nth-child(3) {            /*  hz right ili ne --------------------------------*/
+                                            margin: 10px 5px 10px 0;
+                                            img {
+                                                margin: 5px;
+                                            }
+                                            p {
+                                                font-size: 14px;
+                                            }
+                                        }
                                     }
-                                    .left_side_img_adaptive {
-                                        margin-top: 10px;
+                                    h3 {
+                                        font-size: 20px;
                                         margin-bottom: 15px;
                                     }
-                                }
-                                .toggle_switch_adaptive {
-                                    transform: scale(1);
-                                    input[type=checkbox]{
-                                        height: 0;
-                                        width: 0;
-                                        visibility: hidden;
-                                    }
-                                    
-                                    label {
-                                        cursor: pointer;
-                                        text-indent: -9999px;
-                                        width: 80px;
-                                        height: 40px;
-                                        background: #DFDADA;
-                                        display: block;
-                                        border-radius: 40px;
+
+
+
+                                    .card_bot_info {
                                         position: relative;
-                                    }
-                                    
-                                    label:after {
-                                        content: '';
-                                        position: absolute;
-                                        top: 6px;
-                                        left: 6px;
-                                        width: 28px;
-                                        height: 28px;
-                                        background: #fff;
-                                        border-radius: 28px;
-                                        transition: 0.3s;
-                                    }
-                                    
-                                    input:checked + label {
-                                        background: $orange;
-                                    }
-                                    
-                                    input:checked + label:after {
-                                        left: calc(100% - 6px);
-                                        transform: translateX(-100%);
-                                    }
-                                    
-                                    label:active:after {
-                                        width: 40px;
+                                        width: 100%;
+
+                                        display: flex;
+                                        justify-content: space-around;
+                                        align-items: center;
+
+                                        div:nth-child(1), div:nth-child(2) {
+                                            justify-content: flex-end;
+                                            background-color: #FAFAFA;
+                                            padding: 5px 10px;
+                                            border: 2px solid #DFDADA;
+                                            border-radius: 3px;
+                                            p {
+                                                font-size: 14px;
+                                            }
+                                            svg {
+                                                margin-right: 10px;
+                                                path {
+                                                    transition: all 0.3s;
+                                                }
+                                            }
+                                            p {
+                                                color: #696969;
+                                                transition: all 0.3s;
+                                                font-family: 'ProximaNovaBold';
+                                                font-size: 18px;
+                                            }
+                                            &:hover {
+                                                svg {
+                                                    path {
+                                                        fill: $orange;
+                                                    }
+                                                }
+                                                p {
+                                                    color: $orange;
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
-                            .container {
-                                position: relative;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: flex-start;
-                                align-items: flex-start;                            
-                                width: 95%;
-                                .card_left_side {
-                                    position: relative;
-                                    display: flex;
-                                    justify-content: flex-start;
-                                    align-items: center;
-                                    width: 95%; 
-                                    .left_side_img {
-                                        display: none;
-                                    }
-
-
-                                    
-                                    .card_info {
-                                        position: relative;
-                                        display: flex;
-                                        flex-direction: column;
-                                        justify-content: center;                      
-                                        align-items:  flex-start;                     
-                                        margin-left: 0;
-                                        .card_top_info {
-                                            div:nth-child(1), div:nth-child(2), div:nth-child(3) {            /*  hz right ili ne --------------------------------*/
-                                                margin: 10px 5px 10px 0;
-                                                img {
-                                                    margin: 5px;
-                                                }
-                                                p {
-                                                    font-size: 14px;
-                                                }
-                                            }
-                                        }
-                                        h3 {
-                                            font-size: 20px;
-                                            margin-bottom: 15px;
-                                        }
-
-
-
-                                        .card_bot_info {
-                                            position: relative;
-                                            width: 100%;
-
-                                            display: flex;
-                                            justify-content: space-around;
-                                            align-items: center;
-
-                                            div:nth-child(1), div:nth-child(2) {
-                                                justify-content: flex-end;
-                                                background-color: #FAFAFA;
-                                                padding: 5px 10px;
-                                                border: 2px solid #DFDADA;
-                                                border-radius: 3px;
-                                                p {
-                                                    font-size: 14px;
-                                                }
-                                                svg {
-                                                    margin-right: 10px;
-                                                    path {
-                                                        transition: all 0.3s;
-                                                    }
-                                                }
-                                                p {
-                                                    color: #696969;
-                                                    transition: all 0.3s;
-                                                    font-family: 'ProximaNovaBold';
-                                                    font-size: 18px;
-                                                }
-                                                &:hover {
-                                                    svg {
-                                                        path {
-                                                            fill: $orange;
-                                                        }
-                                                    }
-                                                    p {
-                                                        color: $orange;
-                                                    }
-                                                }
-                                            }
-
-                                            // div:nth-child(1), div:nth-child(2) {
-                                            //     justify-content: flex-end;
-                                            //     background-color: #FAFAFA;
-                                            //     padding: 5px 10px;
-                                            //     border: 2px solid #DFDADA;
-                                            //     border-radius: 3px;
-                                            //     p {
-                                            //         font-size: 14px;
-                                            //     }
-                                            // }
-                                            // div:nth-child(2) {
-                                            //     transition: all 0.3s;
-                                            //     &:hover {
-                                            //         background-color: #FFFCFC;
-                                            //     }
-                                            // }
-
-                                        }
-                                    }
-                                }
-                                .toggle_switch {
-                                    display: none;
-                                }
+                            .toggle_switch {
+                                display: none;
                             }
                         }
                     }
@@ -2077,169 +2051,168 @@ footer {
                         }
                     }
                 }
-                &:hover {
-                    .cards_dropdown {
-                        .card {
-                            &:hover {
-                                .adaptive_card_title {
-                                    .adaptive_card_left_block {
-                                        .card_number_adaptive {
-                                            background-color: $orange;
-                                        }
+                
+                .cards_dropdown {
+                    .card {
+                        &:hover {
+                            .adaptive_card_title {
+                                .adaptive_card_left_block {
+                                    .card_number_adaptive {
+                                        background-color: $orange;
                                     }
                                 }
                             }
-                            .card_number {
-                                display: none;
-                            }
-                            .adaptive_card_title {
+                        }
+                        .card_number {
+                            display: none;
+                        }
+                        .adaptive_card_title {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            margin: 30px auto 0 auto;
+                            width: 95%;
+                            .adaptive_card_left_block {
                                 display: flex;
-                                flex-direction: row;
-                                justify-content: space-between;
+                                justify-content: flex-start;
                                 align-items: center;
 
-                                margin: 30px auto 0 auto;
-                                width: 95%;
-                                .adaptive_card_left_block {
+                                .card_number_adaptive {
+                                    position: relative;
+                                    top: 0;
+                                    left: 0;
+                                    width: 10px;
+                                    height: 10px;
+                                    padding: 10px;
+                                    margin-right: 30px;
+                                    background-color: #F3F3F3;
+                                    border-radius: 3px 0 3px 0;
+                                    transition: all 0.3s;
+        
                                     display: flex;
-                                    justify-content: flex-start;
+                                    justify-content: center;
                                     align-items: center;
-
-                                    .card_number_adaptive {
-                                        position: relative;
-                                        top: 0;
-                                        left: 0;
-                                        width: 10px;
-                                        height: 10px;
-                                        padding: 10px;
-                                        margin-right: 30px;
-                                        background-color: #F3F3F3;
-                                        border-radius: 3px 0 3px 0;
-                                        transition: all 0.3s;
-            
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
+                                }
+                                .left_side_img_adaptive {
+                                    margin-top: 10px;
+                                    margin-bottom: 15px;
+                                }
+                            }
+                            .toggle_switch_adaptive {
+                                transform: scale(1);
+                                input[type=checkbox]{
+                                    height: 0;
+                                    width: 0;
+                                    visibility: hidden;
+                                }
+                                
+                                label {
+                                    cursor: pointer;
+                                    text-indent: -9999px;
+                                    width: 80px;
+                                    height: 40px;
+                                    background: #DFDADA;
+                                    display: block;
+                                    border-radius: 40px;
+                                    position: relative;
+                                }
+                                
+                                label:after {
+                                    content: '';
+                                    position: absolute;
+                                    top: 6px;
+                                    left: 6px;
+                                    width: 28px;
+                                    height: 28px;
+                                    background: #fff;
+                                    border-radius: 28px;
+                                    transition: 0.3s;
+                                }
+                                
+                                input:checked + label {
+                                    background: $orange;
+                                }
+                                
+                                input:checked + label:after {
+                                    left: calc(100% - 6px);
+                                    transform: translateX(-100%);
+                                }
+                                
+                                label:active:after {
+                                    width: 40px;
+                                }
+                            }
+                        }
+                        .container {
+                            position: relative;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: flex-start;                            
+                            width: 95%;
+                            .card_left_side {
+                                position: relative;
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                width: 95%; 
+                                .left_side_img {
+                                    display: none;
+                                }
+                                .card_info {
+                                    position: relative;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;                      
+                                    align-items:  flex-start;                     
+                                    margin-left: 0;
+                                    .card_top_info {
+                                        div:nth-child(1), div:nth-child(2), div:nth-child(3) {            /*  hz right ili ne --------------------------------*/
+                                            margin: 10px 5px 10px 0;
+                                            img {
+                                                margin: 5px;
+                                            }
+                                            p {
+                                                font-size: 14px;
+                                            }
+                                        }
                                     }
-                                    .left_side_img_adaptive {
-                                        margin-top: 10px;
+                                    h3 {
+                                        font-size: 20px;
                                         margin-bottom: 15px;
                                     }
-                                }
-                                .toggle_switch_adaptive {
-                                    transform: scale(1);
-                                    input[type=checkbox]{
-                                        height: 0;
-                                        width: 0;
-                                        visibility: hidden;
-                                    }
-                                    
-                                    label {
-                                        cursor: pointer;
-                                        text-indent: -9999px;
-                                        width: 80px;
-                                        height: 40px;
-                                        background: #DFDADA;
-                                        display: block;
-                                        border-radius: 40px;
+                                    .card_bot_info {
                                         position: relative;
-                                    }
-                                    
-                                    label:after {
-                                        content: '';
-                                        position: absolute;
-                                        top: 6px;
-                                        left: 6px;
-                                        width: 28px;
-                                        height: 28px;
-                                        background: #fff;
-                                        border-radius: 28px;
-                                        transition: 0.3s;
-                                    }
-                                    
-                                    input:checked + label {
-                                        background: $orange;
-                                    }
-                                    
-                                    input:checked + label:after {
-                                        left: calc(100% - 6px);
-                                        transform: translateX(-100%);
-                                    }
-                                    
-                                    label:active:after {
-                                        width: 40px;
+                                        width: 100%;
+
+                                        display: flex;
+                                        justify-content: space-around;
+                                        align-items: center;
+
+                                        div:nth-child(1), div:nth-child(2) {
+                                            justify-content: flex-end;
+                                            background-color: #FAFAFA;
+                                            padding: 5px 10px;
+                                            border: 2px solid #DFDADA;
+                                            border-radius: 3px;
+                                            p {
+                                                font-size: 14px;
+                                            }
+                                        }
+                                        div:nth-child(2) {
+                                            transition: all 0.3s;
+                                            &:hover {
+                                                background-color: #FFFCFC;
+                                            }
+                                        }
+
                                     }
                                 }
                             }
-                            .container {
-                                position: relative;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: flex-start;
-                                align-items: flex-start;                            
-                                width: 95%;
-                                .card_left_side {
-                                    position: relative;
-                                    display: flex;
-                                    justify-content: flex-start;
-                                    align-items: center;
-                                    width: 95%; 
-                                    .left_side_img {
-                                        display: none;
-                                    }
-                                    .card_info {
-                                        position: relative;
-                                        display: flex;
-                                        flex-direction: column;
-                                        justify-content: center;                      
-                                        align-items:  flex-start;                     
-                                        margin-left: 0;
-                                        .card_top_info {
-                                            div:nth-child(1), div:nth-child(2), div:nth-child(3) {            /*  hz right ili ne --------------------------------*/
-                                                margin: 10px 5px 10px 0;
-                                                img {
-                                                    margin: 5px;
-                                                }
-                                                p {
-                                                    font-size: 14px;
-                                                }
-                                            }
-                                        }
-                                        h3 {
-                                            font-size: 20px;
-                                            margin-bottom: 15px;
-                                        }
-                                        .card_bot_info {
-                                            position: relative;
-                                            width: 100%;
-
-                                            display: flex;
-                                            justify-content: space-around;
-                                            align-items: center;
-
-                                            div:nth-child(1), div:nth-child(2) {
-                                                justify-content: flex-end;
-                                                background-color: #FAFAFA;
-                                                padding: 5px 10px;
-                                                border: 2px solid #DFDADA;
-                                                border-radius: 3px;
-                                                p {
-                                                    font-size: 14px;
-                                                }
-                                            }
-                                            div:nth-child(2) {
-                                                transition: all 0.3s;
-                                                &:hover {
-                                                    background-color: #FFFCFC;
-                                                }
-                                            }
-
-                                        }
-                                    }
-                                }
-                                .toggle_switch {
-                                    display: none;
-                                }
+                            .toggle_switch {
+                                display: none;
                             }
                         }
                     }
@@ -2258,18 +2231,16 @@ footer {
                         }
                     }
                 }
-                &:hover {
-                    .dropdown_list {
-                        .dropdown_block {
-                            h3 {
-                                font-size: 16px;
-                            }
-                            .dropdown_item_content {
-                                .dropdown_item {
-                                    .dropdown_item_text {
-                                        .item_text {
-                                            font-size: 14px;
-                                        }
+                .dropdown_list {
+                    .dropdown_block {
+                        h3 {
+                            font-size: 16px;
+                        }
+                        .dropdown_item_content {
+                            .dropdown_item {
+                                .dropdown_item_text {
+                                    .item_text {
+                                        font-size: 14px;
                                     }
                                 }
                             }
@@ -2292,24 +2263,18 @@ footer {
                         }
                     }
                 }
-                &:hover {
-                    .dropdown_switcher{
-                    }
-                    .dropdown_list {
-                        .dropdown_item {
-                            .dropdown_switcher {
-                                .left_dropdown_switcher_block {
-                                    h3 {
-                                        font-size: 16px;
-                                    }
+                .dropdown_list {
+                    .dropdown_item {
+                        .dropdown_switcher {
+                            .left_dropdown_switcher_block {
+                                h3 {
+                                    font-size: 16px;
                                 }
                             }
-                            &:hover {
-                                .sub_dropdown_content {
-                                    p {
-                                        font-size: 14px;
-                                    }
-                                }
+                        }
+                        .sub_dropdown_content {
+                            p {
+                                font-size: 14px;
                             }
                         }
                     }
@@ -2409,32 +2374,4 @@ footer {
     .under_main_screen {
         display: none;
     }
-    // .module_purposes {
-    //     nav {
-    //         width: 95%;   
-    //     }
-    //     .container {
-    //         .dropdown {
-    //             .dropdown_switcher {
-    //                 .left_dropdown_switcher_block {
-    //                     h2 {
-    //                         font-size: 24px;
-    //                     }
-    //                 }
-    //             }
-    //             &:hover {
-    //                 .dropdown_list {
-    //                     .dropdown_item {
-    //                         .dropdown_item_text {
-    //                             .item_text {
-    //                                 font-size: 14px;
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-
 }
