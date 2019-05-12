@@ -1771,20 +1771,6 @@ footer {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 1400px) {
     .title_screen {
         &::before {
@@ -2109,7 +2095,7 @@ footer {
                         }
                         h2 {
                             font-size: 24px;
-                            width: 230px;
+                            width: 180px;
                         }
                     }
                 }
@@ -2387,6 +2373,7 @@ footer {
                                     h3 {
                                         font-size: 20px;
                                         margin-bottom: 15px;
+                                        width: 90%;
                                     }
                                     .card_bot_info {
                                         position: relative;
@@ -2405,7 +2392,7 @@ footer {
                                             cursor: pointer;
                                             transition: 0.3s;
                                             svg {
-                                                margin-right: 10px;
+                                                margin-right: 0px;
                                                 path {
                                                     transition: all 0.3s;
                                                 }
@@ -2462,6 +2449,7 @@ footer {
         }
         .title_bottom_text {
             margin: 0 0 10px 5%;
+            position: relative;
         }
     }
     

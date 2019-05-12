@@ -2830,7 +2830,7 @@ footer .container .footer_card .phone {
   }
   .pay_attention .container .dropdown .dropdown_switcher .left_dropdown_switcher_block h2 {
     font-size: 24px;
-    width: 230px;
+    width: 180px;
   }
   .pay_attention .container .dropdown .dropdown_list .dropdown_item .dropdown_switcher .left_dropdown_switcher_block h3 {
     font-size: 16px;
@@ -3111,6 +3111,7 @@ footer .container .footer_card .phone {
   .to_work .container .dropdown .cards_dropdown .card .container .card_left_side .card_info h3, .additional_tasks .container .dropdown .cards_dropdown .card .container .card_left_side .card_info h3 {
     font-size: 20px;
     margin-bottom: 15px;
+    width: 90%;
   }
   .to_work .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info, .additional_tasks .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info {
     position: relative;
@@ -3137,7 +3138,7 @@ footer .container .footer_card .phone {
     transition: 0.3s;
   }
   .to_work .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(1) svg, .to_work .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(2) svg, .additional_tasks .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(1) svg, .additional_tasks .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(2) svg {
-    margin-right: 10px;
+    margin-right: 0px;
   }
   .to_work .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(1) svg path, .to_work .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(2) svg path, .additional_tasks .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(1) svg path, .additional_tasks .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(2) svg path {
     -webkit-transition: all 0.3s;
@@ -3183,6 +3184,7 @@ footer .container .footer_card .phone {
   }
   .title_screen .title_bottom_text {
     margin: 0 0 10px 5%;
+    position: relative;
   }
   .questions .container .dropdown .dropdown_list .dropdown_item .sub_dropdown_content .container button {
     display: none;
