@@ -2636,6 +2636,7 @@ footer .container .footer_card .phone {
     display: none;
   }
   header .container .burger_menu {
+    padding: 30px 0 30px 0;
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2775,6 +2776,9 @@ footer .container .footer_card .phone {
   .to_work .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info, .additional_tasks .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info {
     position: relative;
     width: 100%;
+  }
+  .to_work .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(1), .to_work .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(2), .additional_tasks .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(1), .additional_tasks .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(2) {
+    margin: 0 25px 40px 0;
   }
   .to_work .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(1) p, .to_work .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(2) p, .additional_tasks .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(1) p, .additional_tasks .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(2) p {
     font-size: 14px;
@@ -3136,6 +3140,7 @@ footer .container .footer_card .phone {
     cursor: pointer;
     -webkit-transition: 0.3s;
     transition: 0.3s;
+    margin: 0;
   }
   .to_work .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(1) svg, .to_work .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(2) svg, .additional_tasks .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(1) svg, .additional_tasks .container .dropdown .cards_dropdown .card .container .card_left_side .card_info .card_bot_info div:nth-child(2) svg {
     margin-right: 0px;

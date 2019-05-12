@@ -1852,7 +1852,7 @@ footer {
                 display: none;
             }
             .burger_menu {
-                
+                padding: 30px 0 30px 0;
                 position: relative;
                 display: flex;
                 flex-direction: column;
@@ -1998,6 +1998,7 @@ footer {
                                         width: 100%;
 
                                         div:nth-child(1), div:nth-child(2) {
+                                            margin: 0 25px 40px 0;
                                             p {
                                                 font-size: 14px;
                                             }
@@ -2391,6 +2392,7 @@ footer {
                                             border-radius: 3px;
                                             cursor: pointer;
                                             transition: 0.3s;
+                                            margin: 0;
                                             svg {
                                                 margin-right: 0px;
                                                 path {

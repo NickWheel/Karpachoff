@@ -802,6 +802,7 @@ footer .container .footer_card .phone {
     display: none;
   }
   header .container .burger_menu {
+    padding: 30px 0 30px 0;
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
