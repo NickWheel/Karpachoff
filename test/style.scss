@@ -28,12 +28,12 @@
 #toggle {
     display: none;
 }
-input:checked + .huyna  {
+#toggle:checked + .huyna  {
 
         display: none;
 
 }
-.label {
+.toggle_btn {
     display: block;
     width: 200px;
     background-color: #696969;
@@ -45,6 +45,22 @@ input:checked + .huyna  {
     width: 400px;
     height: 200px;
     background-color: yellow;
+}
+.stupid_shit {
+    .toggle_btn {
+        .label_btn {
+            input[type=checkbox] {
+                display: none;
+            }
+            img {
+                transition: all 0.3s;
+                transform: rotate(0deg);
+            }
+            input[type=checkbox]:checked + img {
+                transform: rotate(480deg);
+                        }
+        }
+    }
 }
 
 // @import '../styles/variables_course.scss';

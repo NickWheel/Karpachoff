@@ -81,7 +81,7 @@ header .container ul {
 }
 
 header .container ul a {
-  padding: 20px 0 20px 0;
+  padding: 30px 0 30px 0;
   margin: 0 20px 0 20px;
   font-family: 'ProximaNovaBold';
   border-bottom: 3px solid #fff;
@@ -592,12 +592,30 @@ footer .container .footer_card .short_line {
 footer .container .footer_card p {
   font-family: 'ProximaNovaSemibold';
   margin-bottom: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+footer .container .footer_card p:not(.title_text):hover {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
 }
 
 footer .container .footer_card a {
   color: #fff;
   font-family: 'ProximaNovaSemibold';
   padding: 5px 10px 5px 0px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+footer .container .footer_card a:hover {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
 }
 
 footer .container .footer_card .phone {

@@ -2,11 +2,11 @@
   display: none;
 }
 
-input:checked + .huyna {
+#toggle:checked + .huyna {
   display: none;
 }
 
-.label {
+.toggle_btn {
   display: block;
   width: 200px;
   background-color: #696969;
@@ -18,5 +18,21 @@ input:checked + .huyna {
   width: 400px;
   height: 200px;
   background-color: yellow;
+}
+
+.stupid_shit .toggle_btn .label_btn input[type=checkbox] {
+  display: none;
+}
+
+.stupid_shit .toggle_btn .label_btn img {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.stupid_shit .toggle_btn .label_btn input[type=checkbox]:checked + img {
+  -webkit-transform: rotate(480deg);
+          transform: rotate(480deg);
 }
 /*# sourceMappingURL=style.css.map */

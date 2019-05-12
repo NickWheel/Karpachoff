@@ -62,7 +62,7 @@ header {
             justify-content: space-between;
             align-items: center;
             a {
-                padding: 20px 0 20px 0;
+                padding: 30px 0 30px 0;
                 margin: 0 20px 0 20px;
                 font-family: 'ProximaNovaBold';
                 border-bottom: 3px solid #fff;
@@ -450,11 +450,21 @@ footer {
             p {
                 font-family: 'ProximaNovaSemibold';
                 margin-bottom: 10px;
+                transition: all 0.3s;
+                transform: translateX(0px);
+                &:not(.title_text):hover {
+                    transform: translateX(10px);
+                }
             }
             a {
                 color: #fff;
                 font-family: 'ProximaNovaSemibold';
                 padding: 5px 10px 5px 0px;
+                transition: all 0.3s;
+                transform: translateX(0px);
+                &:hover {
+                    transform: translateX(10px);
+                }
             }
             .phone {
                 font-family: 'ProximaNovaSemibold';
